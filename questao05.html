@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halteres Seus Hábitos</title>
+    <link rel="stylesheet" href="css/styles05.css"> <!-- O arquivo CSS onde as classes são definidas -->
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-title">
+                <h1>Halteres Seus <span class="highlight">Hábitos</span></h1>
+            </div>
+            <div id="ender">
+                <p>Estrada do Puxa Ferro, 12<br>
+                   Tel: (21) 91234-5678<br>
+                   contato@halterhabit.com.br</p>
+            </div>
+        </div>    
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="questao02.html" target="_blank">Apresentação</a></li>
+            <li><a href="questao03.html" target="_blank">Planos</a></li>
+            <li><a href="questao04.html" target="_blank">Equipamentos</a></li>
+            <li><a href="#" target="_blank">Inscrição</a></li>
+        </ul>
+    </nav>
+
+    <section>
+        <div id="formInscricao">
+            <h2>Inscrição</h2>
+            <form>
+                <fieldset id="fsPes">
+                    <legend>Dados Pessoais</legend>
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" class="inpNome">
+                
+                    <!-- Bloco de campos flexível -->
+                    <div class="input-container">
+                        <div class="contact-fields">
+                            <label for="telefone">Telefone:</label>
+                            <input type="text" id="telefone" name="telefone" class="inpTelef">
+                            <label for="celular">Celular:</label>
+                            <input type="text" id="celular" name="celular" class="inpTelef">
+                            <label for="nascimento">Idade:</label>
+                            <input type="date" id="nascimento" name="nascimento" class="inpVal">
+                        </div>
+                
+                        <fieldset id="fsGenero">
+                            <legend>Gênero:</legend>
+                            <input type="radio" id="masculino" name="genero" value="masculino">
+                            <label for="masculino">Masculino</label>
+                            <input type="radio" id="feminino" name="genero" value="feminino">
+                            <label for="feminino">Feminino</label>
+                            <input type="radio" id="outro" name="genero" value="outro">
+                            <label for="outro">Outro</label>
+                        </fieldset>
+                    </div>
+                </fieldset>
+                
+                <br>
+                
+                <fieldset id="fsMatricula">
+                    <legend>Matrícula</legend>
+                    
+                    <div class="matricula-container">
+                        <label for="temMatricula">Matrícula?</label>
+                        <input type="checkbox" id="temMatricula" name="temMatricula">
+                
+                        <label for="numeroMatricula">Número:</label>
+                        <input type="text" id="numeroMatricula" name="numeroMatricula" class="inpMat" disabled>
+                    </div>
+
+                    <div style="display: flex; align-items: center;">
+                        <div style="margin-right: 60px;">
+                            <label for="atividade">Atividade:</label>
+                            <select id="atividade" name="atividade">
+                                <option value="">------</option>
+                                <option value="academia">Academia</option>
+                                <option value="natacao">Natação</option>
+                                <option value="combo">Combo</option>
+                            </select>
+                        </div>
+                    
+                        <div>
+                            <label for="plano">Plano:</label>
+                            <select id="plano" name="plano">
+                                <option value="">------</option>
+                                <option value="academia">Academia</option>
+                                <option value="anual">Anual</option>
+                                <option value="semestral">Semestral</option>
+                                <option value="mensal">Mensal</option>
+                            </select>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <br>
+                
+                <fieldset id="fsCartao">
+                    <legend>Cartão</legend>
+                    
+                    <div class="bandeira-container">
+                        <label for="bandeira">Bandeira:</label>
+                        <input type="radio" id="visa" name="bandeira" value="visa">
+                        <label for="visa">Visa</label>
+                        <input type="radio" id="master" name="bandeira" value="master">
+                        <label for="master">Master</label>
+                        <input type="radio" id="elo" name="bandeira" value="elo">
+                        <label for="elo">Elo</label>
+                    </div>
+
+                    <div>
+                        <span style="display: inline-block; margin-right: 10px;">
+                            <label for="validadeMes">Validade:</label>
+                            <input type="number" id="validadeMes" name="validadeMes" min="1" max="12" style="width: 50px;"> /
+                            <input type="number" id="validadeAno" name="validadeAno" style="width: 60px;">
+                        </span>
+                    </div>
+                    
+                    <label for="numeroCartao">Número do Cartão:</label>
+                    <input type="text" id="numeroCartao" name="numeroCartao" class="inpNCC"><br><br>
+                </fieldset>
+                
+                <br>
+
+                <fieldset id="fsFinal">
+                    <button type="button" id="btnMostrarInfo"> Matrícula + Plano</button><br><br>
+                    <label for="valor">Valor: R$</label>
+                    <input type="text" id="valor" name="valor" class="inpVal" disabled><br><br>
+                </fieldset>
+
+                <div class="button-container">
+                    <input type="submit" value="Enviar" class="inpEnviar">
+                    <input type="reset" value="Limpar" class="inpLimpar">
+                </div>
+                
+                
+            </form>
+        </div>
+    </section>
+
+    <script>
+        // Habilita/Desabilita o campo de número de matrícula com base no checkbox
+        document.getElementById('temMatricula').addEventListener('change', function() {
+            document.getElementById('numeroMatricula').disabled = !this.checked;
+        });
+    </script>
+</body>
+</html>
